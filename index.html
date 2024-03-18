@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Beatify-A Music Player</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20231027/pngtree-hexagonal-abstract-background-with-a-black-textured-surface-image_13704307.png'); /* Replace 'background.jpg' with the path to your image */
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        text-align: center;
+    }
+    h1 {
+        color: white;
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    #letsGoButton {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #letsGoButton:hover {
+        background-color: #2980b9;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Beatify-A Music Player</h1>
+        <button id="letsGoButton">Let's Go</button>
+    </div>
+
+    <script>
+        document.getElementById("letsGoButton").addEventListener("click", function() {
+            window.location.href = "login.html"; // Redirects to next_page.html
+        });
+    </script>
+</body>
+</html>

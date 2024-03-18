@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Beatify - A Music Player</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #121312;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    header img {
+        width: 70px; /* Adjust the width as needed */
+        height: auto;
+        margin-right: 10px;
+    }
+    header h1 {
+        display: inline-block;
+        color: #e63c09;
+        font-size: 50px;
+        margin: 0;
+    }
+    .container {
+        background-color: #922323;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    input[type="text"], input[type="password"] {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #e3f309;
+        color: #e70a0a;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .text-center {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Beatify Logo">
+        <h1>Beatify - A Music Player</h1>
+    </header>
+
+<div class="container" id="loginContainer">
+    <h2>Login</h2>
+    <form id="loginForm" class="text-center">
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+    <p class="text-center">Don't have an account? <a href="#" id="signupLink">Signup</a></p>
+</div>
+
+<div class="container" id="signupContainer" style="display: none;">
+    <h2>Signup</h2>
+    <form id="signupForm" class="text-center">
+        <input type="text" id="signupUsername" placeholder="Username" required>
+        <input type="password" id="signupPassword" placeholder="Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        <input type="submit" value="Signup">
+    </form>
+    <p class="text-center">Already have an account? <a href="#" id="loginLink">Login</a></p>
+</div>
+
+<script>
+    document.getElementById("signupLink").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("loginContainer").style.display = "none";
+        document.getElementById("signupContainer").style.display = "block";
+    });
+
+    document.getElementById("loginLink").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("signupContainer").style.display = "none";
+        document.getElementById("loginContainer").style.display = "block";
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        // Perform login authentication here
+        window.location.href = "main.html"; // Redirect to main page
+    });
+
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        // Perform signup authentication here
+        window.location.href = "main.html"; // Redirect to main page
+    });
+</script>
+</body>
+</html>
